@@ -1,5 +1,6 @@
 package com.caranroja.hotel.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -18,9 +19,13 @@ public class Habitacion {
   private LocalDate fechaInicio;
   private LocalDate fechaFin;
   private boolean disponible;
+
+  @JsonManagedReference
   @ManyToOne(fetch = FetchType.EAGER)
   @JoinColumn(name = "sede_id")
   private Sede sede;
+
+  @JsonManagedReference
   @ManyToOne(fetch = FetchType.EAGER)
   @JoinColumn(name = "temporada_id")
   private Temporada temporada;

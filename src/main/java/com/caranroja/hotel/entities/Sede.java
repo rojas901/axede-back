@@ -1,5 +1,6 @@
 package com.caranroja.hotel.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -13,6 +14,8 @@ public class Sede {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private String ciudad;
+
+  @JsonBackReference
   @OneToMany(
       fetch = FetchType.EAGER,
       cascade = CascadeType.ALL,
