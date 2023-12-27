@@ -1,4 +1,4 @@
-##Instalacion
+## Instalacion
 1. Instalar jdk con version 17
 2. Usar intellij que ya trae el wrapper de gradle
 3. crear una base de datos llamada hotel
